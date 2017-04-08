@@ -40,7 +40,7 @@ body {
   background-color: rgba(245, 245, 245, 0.2);
 }
 
-#body-box {
+.body-box {
   color: #333;
 }
 
