@@ -192,3 +192,8 @@ body {
     width: 700px;
   }
 }
+
+/* Color fix */
+.white-text {
+  color: white;
+}
