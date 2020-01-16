@@ -42,35 +42,44 @@
             </div>
           </div>
 
-          <div class="inner cover well body-box">
-            <h1 class="cover-heading">Welcome.</h1>
+          <div class="inner cover well body-box more-visible">
+            <h1 class="cover-heading">Welcome to Collin's Code</h1>
             <p class="lead">Feel free to look around.
             My GitHub repositories are available below in the <i>projects</i> section of this page.</p>
-
-            <p class="lead">
+            <!--
+              <p class="lead">
               <a href="#contact" class="btn btn-lg btn-default">About me</a>
             </p>
+            -->
+            <hr/>
+            <div class="blog-post">
+              <h2 class="blog-post-title">Moving forward!</h2>
+              <p class="blog-post-meta">January 16, 2020 by Collin Ballou</p>
+              <p class="blog-post-text">
+                It has been a while since I've even looked over this site. To be honest, I was sort of cringing at the lack of dynamics offered by the static site hosting it is platformed on.
+                See, I hosted this on Github Pages the day I discovered Pages exist. If I had known from the beginning that it only allowed me to use one page for the whole site and it lacks a number of basic features I would have decided to go with a more established host.
+                I am currently working on building a replacement for this site that I will have hosted elsewhere and I'm thinking to use Flask to build templates for it. This site was build almost from scratch excepting some imports from bootstrap for style. I'm not stylish, at least Bootstrap is!
+              </p>
+            </div><!-- /.blog-post -->
+      
           </div>
           <!--
           <div class="mastfoot">
             <div class="inner">
-              <p>Cover template for
-              <a href="http://getbootstrap.com">Bootstrap</a>,
-              by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+              <p></p>
             </div>
           </div>
           -->
-
         </div>
-
       </div>
-
     </div>
+
     <div class="site-wrapper" id='projects'>
       <div class="site-wrapper-inner2">
         <div class="cover-container">
           <div class="inner cover well body-box alternate-body-box">
             <h1 class="cover-heading">Projects:</h1>
+            <br/>
             <p class="lead"><a href="https://github.com/BlueEagle/BlueEagle.github.io">BlueEagle.github.io</a></p>
             <p class="lead"><a href="https://github.com/BlueEagle/dot-files">dot-files</a></p>
             <p class="lead"><a href="https://github.com/BlueEagle/SyncModDate">SyncModDate</a></p>
@@ -84,22 +93,24 @@
         </div>
       </div>
     </div>
+
     <div class="site-wrapper" id='contact'>
       <div class="site-wrapper-inner3">
         <div class="cover-container">
-          <div class="inner cover well body-box alternate-body-box">
-            <h1 class="cover-heading white-text">Contacts:</h1>
-            <p class="lead white-text">Below are a list of my social media links, and ways to get in touch with me.</p>
+          <div class="inner cover well body-box alternate-body-box dark-gray-text">
+            <h1 class="cover-heading dark-gray-text">Contacts:</h1>
+          <p class="lead dark-gray-text" id="contact-subtitle">Below are a list of my social media links, and ways to get in touch with me.</p>
+          <hr/>
             <h2><a href="https://www.facebook.com/ballou.collin">Facebook!</a></h2>
             <h2><a href="https://github.com/BlueEagle">Github!</a></h2>
             <h2><a href="https://www.linkedin.com/in/collin-ballou-67749539/">LinkedIn!</a></h2>
-            <p class="lead"></p>
             <p class="lead"></p>
           </div>
         </div>
       </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
    <script src="bootstrap.min.js"></script>
  </body>
 </html>
