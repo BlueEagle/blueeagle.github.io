@@ -80,6 +80,13 @@ body {
   display: table-cell;
   vertical-align: top;
 }
+.site-wrapper-inner4 {
+  background-image: url("background4.jpg");
+  background-position: center;
+  background-size: cover;
+  display: table-cell;
+  vertical-align: top;
+}
 .cover-container {
   margin-right: auto;
   margin-left: auto;
@@ -216,4 +223,9 @@ hr {
 
 .blog-post-text {
   font-size: large;
+}
+
+/* Implementing the flex! */
+.flex-container {
+  display: flex;
 }
