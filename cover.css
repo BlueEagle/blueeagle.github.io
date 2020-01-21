@@ -223,6 +223,7 @@ hr {
 
 .blog-post-text {
   font-size: large;
+  text-align: justify;
 }
 
 /* Implementing the flex! */
@@ -239,4 +240,12 @@ hr {
 }
 #projects { 
   padding:0;
+}
+
+.APA-fonts {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12pt;
+}
+.left-text {
+  text-align: left;
 }
