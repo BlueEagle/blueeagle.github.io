@@ -235,3 +235,6 @@ hr {
   padding: 2em;
   height: 40em;
 }
+#projects { 
+  padding:0;
+}
