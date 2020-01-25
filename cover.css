@@ -238,6 +238,15 @@ hr {
   padding-bottom: 2em;
   height: 40em;
 }
+
+/* Padded hands :) */
+.left-hand {
+  padding-left: .5em;
+}
+.right-hand {
+  padding-right: .5em;
+}
+
 #projects { 
   padding:0;
 }
