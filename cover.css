@@ -255,3 +255,11 @@ hr {
   font-family: "Times New Roman", Times, serif;
   font-size: 12pt;
 }
+
+.scroll-viewport {
+  scroll-snap-align: center;
+}
+
+.scroll-snapping-enabled {
+  scroll-snap-type: y mandatory;
+}
