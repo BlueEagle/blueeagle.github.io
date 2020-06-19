@@ -25,9 +25,7 @@ function App() {
   return (
     <GloballyStyledDiv className="App">
       <Router>
-        <header>
-          <NavBar style={globalStyleValues}/>
-        </header>
+        <NavBar style={globalStyleValues}/>
       </Router>
     </GloballyStyledDiv>
   );

@@ -40,22 +40,25 @@ const NavBar = (props) => {
   `
 
   return (
-    <StyledNav>
-      <div>
-        <StyledH1>Collin's Code</StyledH1>
-      </div>
-      
-      <RightNavDiv>
-        {/* // <Link to="/projects"><ButtonDiv>Projects</ButtonDiv></Link>
-        // <Link to="/blog"><ButtonDiv>Blog</ButtonDiv></Link>
-        // <Link to="/contact"><ButtonDiv>Contact</ButtonDiv></Link> */}
+    <header>
+      <StyledNav>
+        <div>
+          <StyledH1>Collin's Code</StyledH1>
+        </div>
+        
+        <RightNavDiv>
+          {/* // <Link to="/projects"><ButtonDiv>Projects</ButtonDiv></Link>
+          // <Link to="/blog"><ButtonDiv>Blog</ButtonDiv></Link>
+          // <Link to="/contact"><ButtonDiv>Contact</ButtonDiv></Link> */}
 
-        <StyledLink to="/projects">Projects</StyledLink>
-        <StyledLink to="/blog">Blog</StyledLink>
-        <StyledLink to="/contact">Contact</StyledLink>
+          <StyledLink to="/">Home</StyledLink>
+          <StyledLink to="/projects">Projects</StyledLink>
+          <StyledLink to="/blog">Blog</StyledLink>
+          <StyledLink to="/contact">Contact</StyledLink>
 
-      </RightNavDiv>
-    </StyledNav>
+        </RightNavDiv>
+      </StyledNav>
+    </header>
   )
 }
 
