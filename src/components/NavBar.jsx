@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const NavBar = (props) => {
+  const { style } = props
+  const { lightBlue, superLightBlue } = style
 
   // Styled components
   const StyledNav = styled.nav`
@@ -10,7 +12,7 @@ const NavBar = (props) => {
     align-items: center;
     justify-content: space-between;
     height: 8vh;
-    background: lightblue;
+    background: ${lightBlue};
     padding-left: 3%;
     padding-right: 3%;
   `
@@ -23,15 +25,17 @@ const NavBar = (props) => {
     height: 100%;
     justify-content: space-between;
   `
-  // const ButtonDiv = styled.div`
-  //   box-sizing: border-box;
-  //   height: 100%;
-  //   background-color: red;
-  // `
   const StyledLink = styled(Link)`
-    padding: 3%;
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.5rem;
     margin: 0;
+
+    &:hover {
+      background-color: ${superLightBlue};
+    }
   `
 
   return (

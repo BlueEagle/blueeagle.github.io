@@ -5,7 +5,9 @@ import NavBar from './NavBar'
 
 function App() {
   const [globalStyleValues, setGlobalStyleValues] = useState({
-    fontColor: 'black'
+    fontColor: '#1F2041',
+    lightBlue: '#62A8AC',
+    superLightBlue: '#E0FFFF'
   })
   const { fontColor } = globalStyleValues
 
