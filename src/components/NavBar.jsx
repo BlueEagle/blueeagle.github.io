@@ -47,10 +47,6 @@ const NavBar = (props) => {
         </div>
         
         <RightNavDiv>
-          {/* // <Link to="/projects"><ButtonDiv>Projects</ButtonDiv></Link>
-          // <Link to="/blog"><ButtonDiv>Blog</ButtonDiv></Link>
-          // <Link to="/contact"><ButtonDiv>Contact</ButtonDiv></Link> */}
-
           <StyledLink background={superLightBlue} to="/">Home</StyledLink>
           <StyledLink background={superLightBlue} to="/projects">Projects</StyledLink>
           <StyledLink background={superLightBlue} to="/blog">Blog</StyledLink>
