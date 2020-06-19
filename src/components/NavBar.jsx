@@ -32,6 +32,7 @@ const NavBar = (props) => {
     align-items: center;
     padding: 0 1.5rem;
     margin: 0;
+    font-size: 1.2rem;
 
     &:hover {
       background-color: ${superLightBlue};
