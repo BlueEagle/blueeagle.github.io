@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {BrowserRouter as Router} from 'react-router-dom'
 import styled from 'styled-components'
 import NavBar from './NavBar'
 import BioDiv from './BioDiv'
