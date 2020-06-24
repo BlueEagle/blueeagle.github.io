@@ -12,8 +12,7 @@ const globalStyleValues = {
 const { fontColor, superLightBlue } = globalStyleValues
 
 const GloballyStyledDiv = styled.div`
-  /* @import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
-  font-family: 'Arvo', serif; */
+  font-family: 'Arvo', serif;
   color: ${fontColor};
 
   a {
