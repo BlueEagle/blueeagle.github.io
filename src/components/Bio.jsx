@@ -30,11 +30,23 @@ const BioSection = styled.section`
   * {
     margin: 0 2%;
   }
+
+  @media (max-width: 1160px) {
+    flex-direction: column;
+  }
 `
 const ProfPic = styled.img`
   border-radius: 50%;
   width: 30rem;
+  max-width: 100%;
 `
 const BioDiv = styled.div`
-
+  @media (max-width: 370px) {
+    h2 {
+      font-size: 1.0rem;
+    }
+    p {
+      font-size: .8rem;
+    }
+  }
 `
