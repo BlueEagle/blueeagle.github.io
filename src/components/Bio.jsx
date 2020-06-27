@@ -33,6 +33,9 @@ const BioSection = styled.section`
   @media (max-width: 1160px) {
     flex-direction: column;
   }
+  @media (max-width: 700px) {
+    margin-top: 5%;
+  }
 `
 const ProfPic = styled.img`
   border-radius: 50%;
