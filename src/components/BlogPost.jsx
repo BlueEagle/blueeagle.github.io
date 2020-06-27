@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-// import parser from 'html-react-parser'
-import parser from 'react-html-parser'
+// import parser from 'react-html-parser'
+import ReactMarkdown from 'react-markdown'
 
 const BlogPost = (props) => {
   const { blog } = props
@@ -11,7 +11,7 @@ const BlogPost = (props) => {
       <h3>{title}</h3>
       <h4>{`${date}, ${author}`}</h4>
       {paragraphs.map(paragraph => {
-        return <p>{parser(paragraph)}</p>
+        return <ReactMarkdown source={paragraph} escapeHtml={false} />
       })}
     </BlogContainer>
   )
@@ -31,3 +31,5 @@ const BlogContainer = styled.div`
     margin: 1.5% 0;
   }
 `
+
+// linkFix, return links properly in jsx in their proper place. Make it exist.
