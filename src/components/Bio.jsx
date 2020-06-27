@@ -23,7 +23,6 @@ export default Bio
 const BioSection = styled.section`
   box-sizing: border-box;
   width: 70%;
-  padding: 5% 0;
   display: flex;
   justify-content: center;
   align-items: center;
