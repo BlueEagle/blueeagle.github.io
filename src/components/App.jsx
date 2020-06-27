@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router} from 'react-router-dom'
 import styled from 'styled-components'
 import NavBar from './NavBar'
-import BioDiv from './BioDiv'
+import Bio from './Bio'
 
 const globalStyleValues = {
   fontColor: '#1F2041',
@@ -10,28 +10,6 @@ const globalStyleValues = {
   superLightBlue: '#E0FFFF'
 }
 const { fontColor, superLightBlue } = globalStyleValues
-
-const GloballyStyledDiv = styled.div`
-  font-family: 'Arvo', serif;
-  color: ${fontColor};
-
-  a {
-    color: ${fontColor};
-    text-decoration: none;
-  }
-
-  .bordered-module {
-    background: red;
-  }
-`
-const CenteredContainerDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: ${superLightBlue};
-  height: 92vh;
-`
 
 function App() {
   
@@ -41,7 +19,7 @@ function App() {
       <Router>
         <NavBar style={globalStyleValues} />
         <CenteredContainerDiv>
-          <BioDiv className={"bordered-module"}/>
+          <Bio />
         </CenteredContainerDiv>
       </Router>
     </GloballyStyledDiv>
@@ -49,3 +27,20 @@ function App() {
 }
 
 export default App;
+
+const GloballyStyledDiv = styled.div`
+  font-family: 'Arvo', serif;
+  color: ${fontColor};
+
+  a {
+    color: ${fontColor};
+    text-decoration: none;
+  }
+`
+const CenteredContainerDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: ${superLightBlue};
+`
