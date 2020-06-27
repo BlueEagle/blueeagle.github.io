@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import postData from '../resources/postData'
 import BlogPost from './BlogPost'
 
+const firstBlogPost = postData.shift()
 
 const BlogPage = (props) => {
-  const firstBlogPost = postData.shift()
-
+  
   return (
     <BlogContainer>
       <HighlightContainer>
