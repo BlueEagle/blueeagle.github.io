@@ -31,5 +31,3 @@ const BlogContainer = styled.div`
     margin: 1.5% 0;
   }
 `
-
-// linkFix, return links properly in jsx in their proper place. Make it exist.

@@ -5,21 +5,45 @@ import BlogPost from './BlogPost'
 
 
 const BlogPage = (props) => {
+  const firstBlogPost = postData.shift()
 
   return (
-    <HighlightContainer>
-      <BlogPost blog={postData[0]} />
-    </HighlightContainer>
+    <BlogContainer>
+      <HighlightContainer>
+        <BlogPost blog={firstBlogPost} />
+      </HighlightContainer>
+      <PostContainer>
+        {postData.map(post => {
+          return <BlogPost blog={post} />
+        })}
+      </PostContainer>
+    </BlogContainer>
   )
 }
 
 export default BlogPage
 
-const HighlightContainer = styled.section`
+
+const BlogContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+const HighlightContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: 0 0 3px gray;
+  padding: 1% 3%;
+  width: 70%;
+  margin-bottom: 3%;
+`
+const PostContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 3px gray;
+  background-color: white;
   padding: 1% 3%;
   width: 70%;
 `
