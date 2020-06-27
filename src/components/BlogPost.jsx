@@ -22,16 +22,18 @@ const BlogPost = (props) => {
 export default BlogPost
 
 const BlogContainer = styled.div`
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: 0 0 3px gray;
   width: 100%;
+  padding: 2%;
 
   h4 {
     margin-bottom: 2%;
   }
   p {
-    margin: 1.5% 0;
+    margin: 1rem 0;
   }
 `

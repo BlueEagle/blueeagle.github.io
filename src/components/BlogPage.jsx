@@ -33,9 +33,8 @@ const HighlightContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* box-shadow: 0 0 3px gray; */
-  /* padding: 1% 3%; */
   width: 70%;
+  min-width: 70%;
   margin-bottom: 3%;
 `
 const PostContainer = styled.div`
