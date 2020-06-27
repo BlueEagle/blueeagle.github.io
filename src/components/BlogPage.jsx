@@ -10,11 +10,11 @@ const BlogPage = (props) => {
   return (
     <BlogContainer>
       <HighlightContainer>
-        <BlogPost blog={firstBlogPost} />
+        <BlogPost blog={firstBlogPost} collapsed={false} />
       </HighlightContainer>
       <PostContainer>
         {postData.map(post => {
-          return <BlogPost blog={post} />
+          return <BlogPost blog={post} collapsed={true} />
         })}
       </PostContainer>
     </BlogContainer>
@@ -33,8 +33,8 @@ const HighlightContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 0 3px gray;
-  padding: 1% 3%;
+  /* box-shadow: 0 0 3px gray; */
+  /* padding: 1% 3%; */
   width: 70%;
   margin-bottom: 3%;
 `
@@ -42,8 +42,8 @@ const PostContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 0 3px gray;
+  /* box-shadow: 0 0 3px gray; */
   background-color: white;
-  padding: 1% 3%;
+  /* padding: 1% 3%; */
   width: 70%;
 `
