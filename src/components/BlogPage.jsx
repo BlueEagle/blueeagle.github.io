@@ -36,13 +36,20 @@ const HighlightContainer = styled.div`
   width: 70%;
   min-width: 70%;
   margin-bottom: 3%;
+
+  @media (max-width: 700px) {
+    width: 100%;
+    margin-bottom: 0;
+  }
 `
 const PostContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* box-shadow: 0 0 3px gray; */
   background-color: white;
-  /* padding: 1% 3%; */
   width: 70%;
+
+  @media (max-width: 700px) {
+    width: 100%;
+  }
 `

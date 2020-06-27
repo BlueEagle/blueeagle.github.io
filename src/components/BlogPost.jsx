@@ -34,6 +34,10 @@ const BlogContainer = styled.div`
     margin-bottom: 2%;
   }
   p {
-    margin: 1rem 0;
+    margin: 1rem .5rem;
+  }
+
+  @media (max-width: 700px) {
+
   }
 `

@@ -52,4 +52,8 @@ const CenteredContainerDiv = styled.div`
   justify-content: center;
   align-items: center;
   background: ${superLightBlue};
+  
+  @media (max-width: 700px) {
+    padding: 0;
+  }
 `
