@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import NavBar from './NavBar'
 import Bio from './Bio'
 import BlogPage from './BlogPage';
+import ContactPage from './ContactPage';
 
 const globalStyleValues = {
   fontColor: '#1F2041',
@@ -21,9 +22,14 @@ function App() {
         <NavBar style={globalStyleValues} />
         <CenteredContainerDiv>
           <Switch>
+            <Route path="/contact">
+              <ContactPage />
+            </Route>
+
             <Route path="/blog">
               <BlogPage />
             </Route>
+
             <Route path="/">
               <Bio />
             </Route>
