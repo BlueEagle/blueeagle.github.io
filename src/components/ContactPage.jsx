@@ -7,10 +7,10 @@ const ContactPage = (props) => {
         <ContactContainer>
             <Styledheader>Contact Me!</Styledheader>
             <br />
-            <h3>Email: <a href="mailto:me@balloucollin.dev">me@balloucollin.dev</a></h3>
-            <h3>GitHub: <a href="https://github.com/BlueEagle">BlueEagle</a></h3>
-            <h3>LinkedIn: <a href="https://www.linkedin.com/in/collin-ballou-67749539/">	   &gt;	&gt;	&gt;here 	&lt;	&lt;	&lt;</a></h3>
-            <h3>Facebook: <a href="https://www.facebook.com/ballou.collin">ballou.collin</a></h3>
+            <StyledText>Email: <a href="mailto:me@balloucollin.dev">me@balloucollin.dev</a></StyledText>
+            <StyledText>GitHub: <a href="https://github.com/BlueEagle">BlueEagle</a></StyledText>
+            <StyledText>LinkedIn: <a href="https://www.linkedin.com/in/collin-ballou-67749539/">	   &gt;	&gt;	&gt;here 	&lt;	&lt;	&lt;</a></StyledText>
+            <StyledText>Facebook: <a href="https://www.facebook.com/ballou.collin">ballou.collin</a></StyledText>
         </ContactContainer>
     )
 }
@@ -24,4 +24,9 @@ const ContactContainer = styled.section`
 `
 const Styledheader = styled.h2`
     text-decoration: underline;
+`
+const StyledText = styled.h3`
+    @media (max-width: 500px) {
+        font-size: 1.2rem;
+    }
 `
