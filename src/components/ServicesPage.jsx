@@ -6,7 +6,7 @@ const ServicesPage = (props) => {
   return (
     <ServicesPageContainer>
       <ServiceContainer>
-        <h3>Web Design</h3>
+        <h3>Web design</h3>
         <h4>Fully responsive web styling in CSS/LESS</h4>
         <p>Let's be honest, your website needs some love. Let me help!</p>
         <ServiceRate>Service rate: $125 per page</ServiceRate>
@@ -24,6 +24,13 @@ const ServicesPage = (props) => {
         <h4>Laptop screen replacement + virus removal</h4>
         <p>Bring in your laptop I'll make it all better!</p>
         <ServiceRate>Service rate: $50</ServiceRate>
+      </ServiceContainer>
+
+      <ServiceContainer>
+        <h3>Virus removal and optimization</h3>
+        <h4>Virus removal</h4>
+        <p>Let's get those nasties out of yuor system! Make it purr!</p>
+        <ServiceRate>Service rate: $30</ServiceRate>
       </ServiceContainer>
     </ServicesPageContainer>
   )
