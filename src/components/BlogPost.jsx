@@ -36,8 +36,4 @@ const BlogContainer = styled.div`
   p {
     margin: 1rem .5rem;
   }
-
-  @media (max-width: 700px) {
-
-  }
 `

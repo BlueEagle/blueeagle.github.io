@@ -5,6 +5,7 @@ import NavBar from './NavBar'
 import Bio from './Bio'
 import BlogPage from './BlogPage';
 import ContactPage from './ContactPage';
+import ServicesPage from './ServicesPage';
 
 const globalStyleValues = {
   fontColor: '#1F2041',
@@ -20,10 +21,15 @@ function App() {
     <GloballyStyledDiv className="App">
       <Router>
         <NavBar style={globalStyleValues} />
+
         <CenteredContainerDiv>
           <Switch>
             <Route path="/contact">
               <ContactPage />
+            </Route>
+
+            <Route path="/services">
+              <ServicesPage />
             </Route>
 
             <Route path="/blog">
