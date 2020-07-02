@@ -29,7 +29,7 @@ const ServicesPage = (props) => {
       <ServiceContainer>
         <h3>Virus removal and optimization</h3>
         <h4>Virus removal</h4>
-        <p>Let's get those nasties out of yuor system! Make it purr!</p>
+        <p>Let's get those nasties out of your system! Make it purr!</p>
         <ServiceRate>Service rate: $30</ServiceRate>
       </ServiceContainer>
     </ServicesPageContainer>
