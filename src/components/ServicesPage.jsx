@@ -9,7 +9,7 @@ const ServicesPage = (props) => {
         <h3>Web design</h3>
         <h4>Fully responsive web styling in CSS/LESS</h4>
         <p>Let's be honest, your website needs some love. Let me help!</p>
-        <ServiceRate>Service rate: $125 per page</ServiceRate>
+        <ServiceRate>Service rate: ~$125 per page</ServiceRate>
       </ServiceContainer>
       
       <ServiceContainer>
