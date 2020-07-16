@@ -35,6 +35,7 @@ const ContactContainer = styled.section`
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 `
 const Styledheader = styled.h2`
     /* text-decoration: underline; */
