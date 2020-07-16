@@ -41,6 +41,7 @@ const ProfPic = styled.img`
   border-radius: 50%;
   width: 30rem;
   max-width: 100%;
+  box-shadow: 0 0 6px black;
 `
 const BioDiv = styled.div`
   @media (max-width: 370px) {

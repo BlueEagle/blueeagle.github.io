@@ -42,6 +42,7 @@ const RightNavDiv = styled.div`
 
   @media (max-width: 550px) {
     flex-direction: column;
+    margin-bottom: 5%;
 
     a {
       box-sizing: border-box;
@@ -62,6 +63,8 @@ const StyledNav = styled.nav`
   background: ${props => props.background ? props.background : 'lightBlue'};
   padding-left: 3%;
   padding-right: 3%;
+  box-shadow: 0px 0px 6px black;
+  margin-bottom: 1%;
 
   @media (max-width: 700px) {
     flex-direction: column;
