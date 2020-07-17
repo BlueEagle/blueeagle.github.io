@@ -1,4 +1,7 @@
 import React from 'react'
+
+import GithubCard from './GithubCard'
+
 import styled from 'styled-components'
 import EmailIcon from '@material-ui/icons/Email';
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -6,8 +9,8 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import Box from '@material-ui/core/Box';
 
-const ContactPage = (props) => {
 
+const ContactPage = (props) => {
     return (
         <ContactPageDiv>
             <Styledheader>Contact:</Styledheader>
@@ -17,6 +20,7 @@ const ContactPage = (props) => {
                 <StyledText><a href="https://www.linkedin.com/in/collin-ballou-67749539/"><Box><p>LinkedIn</p><LinkedInIcon style={{ fontSize: 80 }} /></Box></a></StyledText>
                 <StyledText><a href="https://www.facebook.com/ballou.collin"><Box><p>Facebook</p><FacebookIcon style={{ fontSize: 80 }} /></Box></a></StyledText>
             </ContactContainer>
+            <GithubCard />
         </ContactPageDiv>
     )
 }
@@ -26,7 +30,6 @@ export default ContactPage
 const ContactPageDiv = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     text-align: center;
     width: 70%;
 `
