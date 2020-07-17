@@ -1,5 +1,5 @@
 import React from 'react'
-import profilePicture from '../imgs/prof_pic.png'
+import profilePicture from '../imgs/prof_pic.jpg'
 import styled from 'styled-components'
 
 const Bio = (props) => {
