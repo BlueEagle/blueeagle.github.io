@@ -32,6 +32,12 @@ const ContactPageDiv = styled.div`
     flex-direction: column;
     text-align: center;
     width: 70%;
+
+    @media (max-width: 500px) {
+        box-sizing: border-box;
+        width: 100%;
+        /* padding: 1rem; */
+    }
 `
 
 const ContactContainer = styled.section`
@@ -46,6 +52,10 @@ const Styledheader = styled.h2`
 const StyledText = styled.h3`
     padding: 2rem;
 
+
+    @media (max-width: 824px) {
+        flex-basis: 30%;
+    }
     @media (max-width: 500px) {
         font-size: 1.2rem;
     }

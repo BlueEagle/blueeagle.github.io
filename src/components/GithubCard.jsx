@@ -6,6 +6,11 @@ import { githubDummyData } from '../resources/dummyData'
 import { Card } from '@material-ui/core';
 import styled from 'styled-components'
 const USER_NAME = 'BlueEagle'
+const display = {
+  large: '(max-width: 1400px)',
+  small: '(max-width: 700px)',
+  smaller: '(max-width: 500px)'
+}
 
 const GithubCard = props => {
   const [githubData, setGithubData] = useState(githubDummyData) // set this back to null after using dummy data && uncomment useEffect, obviously.
@@ -50,9 +55,18 @@ const StyledCard = styled(Card)`
   display: flex;
   width: 80%;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   h3 {
     line-height: 1.4;
+  }
+
+  @media ${display.small} {
+    width: 100%;
+  }
+  @media ${display.large} {
+    justify-content: center;
+    padding-top: 1.5rem;
   }
 `
 const ProfileImage = styled.img`
@@ -73,6 +87,14 @@ const CardInfoDiv = styled.div`
     margin-left: 1.5rem;
     margin-right: 1rem;
   }
+
+  @media ${display.smaller} {
+    flex-basis: 100%;
+    
+    p {
+      align-self: center;
+    }
+  }
 `
 const TitleDiv = styled.div`
   display: flex;
@@ -85,6 +107,7 @@ const Username = styled.a`
   color: darkslategrey;
 `
 const BioText = styled.p`
+  width: 30%;
   align-self: center;
   color: gray;
   margin-left: 1rem;
@@ -92,4 +115,12 @@ const BioText = styled.p`
   font-size: 1.6rem;
   white-space: normal;
   overflow-wrap: break-word;
+
+  @media ${display.large} {
+    margin-top: 1rem;
+    width: 70%;
+  }
+  @media ${display.smaller} {
+    margin-bottom: 1rem;
+  }
 `
