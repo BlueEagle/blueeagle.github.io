@@ -58,6 +58,7 @@ const GloballyStyledDiv = styled.div`
   }
 `
 const CenteredContainerDiv = styled.div`
+  overflow-x: hidden;
   padding: 5% 0;
   display: flex;
   flex-direction: column;

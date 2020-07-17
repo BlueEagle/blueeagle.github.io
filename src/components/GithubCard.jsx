@@ -47,6 +47,7 @@ const GithubCard = props => {
 export default GithubCard
 
 const StyledCard = styled(Card)`
+  box-sizing: border-box;
   padding: 1%;
   align-self: center;
   display: flex;
@@ -86,6 +87,7 @@ const CardInfoDiv = styled.div`
   }
 
   @media ${display.smaller} {
+    box-sizing: border-box;
     flex-basis: 100%;
     
     p {
