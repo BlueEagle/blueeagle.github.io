@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
-import { githubDummyData } from '../resources/dummyData'
-
 import { Card } from '@material-ui/core';
 import styled from 'styled-components'
 const USER_NAME = 'BlueEagle'
@@ -13,15 +11,14 @@ const display = {
 }
 
 const GithubCard = props => {
-  const [githubData, setGithubData] = useState(githubDummyData) // set this back to null after using dummy data && uncomment useEffect, obviously.
-  const [error, setError] = useState(null)
+  const [githubData, setGithubData] = useState(null) // set this back to null after using dummy data && uncomment useEffect, obviously.
 
-  // useEffect(() => {
-  //   axios
-  //       .get(`https://api.github.com/users/${USER_NAME}`)
-  //       .then(res => setGithubData(res.data))
-  //       .catch(err => setError(`Error in loading Github card data: ${err}`))
-  // }, [])
+  useEffect(() => {
+    axios
+        .get(`https://api.github.com/users/${USER_NAME}`)
+        .then(res => setGithubData(res.data))
+        .catch(err => console.error(`Error in loading Github card data: ${err}`))
+  }, [])
 
   if (githubData === null) return (
     <>
