@@ -1,5 +1,5 @@
 import React from 'react'
-import profilePicture from '../imgs/prof_pic.jpg'
+import profilePicture from '../imgs/prof_pic.png'
 import styled from 'styled-components'
 
 const Bio = (props) => {
@@ -41,6 +41,7 @@ const ProfPic = styled.img`
   border-radius: 50%;
   width: 30rem;
   max-width: 100%;
+  background-color: lightblue;
   box-shadow: 0 0 6px black;
 `
 const BioDiv = styled.div`
