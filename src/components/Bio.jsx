@@ -1,6 +1,9 @@
 import React from 'react'
 import profilePicture from '../imgs/prof_pic.jpg'
+import Typed from 'react-typed'
 import styled from 'styled-components'
+
+
 
 const Bio = (props) => {
   
@@ -9,10 +12,24 @@ const Bio = (props) => {
     <BioSection>
       <ProfPic src={profilePicture} alt="Profile picture" />
       <BioDiv>
-        <h2>Hello. I'm Collin.</h2>
+      <h2>
+        <Typed
+          strings={['Hello. I\'m Blue.', 'Hello. I\'m Collin.']}
+          typeSpeed={60}
+        />
+      </h2>
+      <p>
+        <Typed
+          strings={["I'm a computer programmer with a background in many areas.", "I grew up learning native development with languages like C/C++, BASIC, Java, and Python.", "I'm schooling full time for full stack web development at Lambda School.", "I'm here to help."]}
+          typeSpeed={60}
+          backSpeed={50}
+        />
+      </p>
+        
+        {/* <h2>Hello. I'm Collin</h2>
         <p>
           I'm a computer programmer with a background in many areas. I grew up learning native development with languages like C/C++, BASIC, Java, and Python. Right now, I'm schooling full time for full stack web development at Lambda School.
-        </p>
+        </p> */}
       </BioDiv>
     </BioSection>
   )
@@ -28,6 +45,10 @@ const BioSection = styled.section`
   align-items: center;
   * {
     margin: 0 2%;
+  }
+
+  h2: {
+    word-wrap: none;
   }
 
   @media (max-width: 1160px) {
