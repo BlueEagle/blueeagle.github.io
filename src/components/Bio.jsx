@@ -12,18 +12,14 @@ const Bio = (props) => {
     <BioSection>
       <ProfPic src={profilePicture} alt="Profile picture" />
       <BioDiv>
-      <h2>
-        <Typed
-          strings={['Hello. I\'m Blue.', 'Hello. I\'m Collin.']}
-          typeSpeed={60}
-        />
-      </h2>
+      <StyledH2>
+        Hello, I'm Collin.
+      </StyledH2>
       <p>
         <Typed
-          strings={["I'm a computer programmer with a background in many areas.", "I grew up learning native development with languages like C/C++, BASIC, Java, and Python.", "I'm schooling full time for full stack web development at Lambda School.", "I'm here to help."]}
-          typeSpeed={60}
-          backSpeed={50}
-        />
+            strings={['React.js', 'Node.js', 'Material UI', 'Python', 'Java', 'You name it!', 'How can I help?']}
+            typeSpeed={60}
+          />
       </p>
         
         {/* <h2>Hello. I'm Collin</h2>
@@ -48,6 +44,7 @@ const BioSection = styled.section`
   }
 
   h2: {
+    color: red;
     word-wrap: none;
   }
 
@@ -58,6 +55,10 @@ const BioSection = styled.section`
     margin-top: 5%;
   }
 `
+const StyledH2 = styled.h2`
+  white-space: nowrap;
+`
+
 const ProfPic = styled.img`
   border-radius: 50%;
   width: 30rem;

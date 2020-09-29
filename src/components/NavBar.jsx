@@ -87,8 +87,10 @@ const StyledLink = styled(Link)`
   padding: 1.5rem;
   margin: 0;
   font-size: 1.2rem;
+  
 
   &:hover {
+    transition: .7s ease-out;
     background-color: ${props => props.background ? props.background : 'lightcyan'};
   }
 `
