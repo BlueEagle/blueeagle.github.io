@@ -39,6 +39,10 @@ const ServicesPage = (props) => {
 export default ServicesPage
 
 const ServicesPageContainer = styled.section`
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   @media (max-width: 370px) {
     width: 100%;
   }
@@ -50,7 +54,7 @@ const ServiceContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   box-shadow: 0 0 3px gray;
-  width: 100%;
+  width: 40%;
   padding: 2% 5%;
 
   h4 {

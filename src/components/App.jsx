@@ -28,9 +28,15 @@ function App() {
             </Route>
 
             <Route path="/">
-              <Bio />
-              <ServicesPage />
-              <ContactPage />
+              <PageSection>
+                <Bio />
+              </PageSection>
+              <PageSection>
+                <ServicesPage />
+              </PageSection>
+              <PageSection>
+                <ContactPage />
+              </PageSection>
             </Route>
           </Switch>
         </CenteredContainerDiv>
@@ -65,3 +71,6 @@ const CenteredContainerDiv = styled.div`
     padding: 0;
   }
 `;
+const PageSection = styled.section`
+  height: 100vh;
+`
