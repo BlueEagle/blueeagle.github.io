@@ -22,4 +22,5 @@ const StyledDiv = styled.div`
   position: fixed;
   bottom: 3%;
   right: 3%;
+  box-shadow: 0 0 5px black;
 `;
