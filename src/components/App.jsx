@@ -66,6 +66,8 @@ const CenteredContainerDiv = styled.div`
   justify-content: center;
   align-items: center;
   background: ${superLightBlue};
+  scroll-snap-type: y mandatory;
+  scroll-behaviour: smooth;
 
   @media (max-width: 700px) {
     padding: 0;
@@ -76,4 +78,5 @@ const PageSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  scroll-snap-align: start;
 `
