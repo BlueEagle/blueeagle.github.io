@@ -32,7 +32,7 @@ const Projects = ({ repos, error }) => {
       <div className="container">
         <div className="section-head">
           <h2 className="section-title">Projects</h2>
-          <a href={`https://github.com/${USER_NAME}?tab=repositories`} style={{ fontSize: 15 }}>All repositories →</a>
+          <a href={`https://github.com/${USER_NAME}?tab=repositories`} className="section-link">All repositories →</a>
         </div>
         <p className="lede">Most recently active repositories, pulled live from GitHub.</p>
         <div className="repo-grid">

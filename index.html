@@ -2,32 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/Cc.ico" />
+    <link rel="icon" href="/Cc.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#F5EFE6" />
     <meta
       name="description"
       content="Collin Ballou — Senior Security Engineer. AppSec, DLP, IDP, Full Stack, Native, and AI."
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="alternate" type="application/rss+xml" title="Collin's Code" href="%PUBLIC_URL%/rss.xml" />
+    <link rel="canonical" href="https://ballou.rocks/" />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="alternate" type="application/rss+xml" title="Collin's Code" href="/rss.xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <script>
-      // Apply the saved or system theme before first paint to avoid a flash.
-      (function () {
-        var t = null;
-        try { t = localStorage.getItem('cc-theme'); } catch (e) {}
-        if (!t) t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', t);
-      })();
-    </script>
+    <!-- Applies the saved or system theme before first paint. External so the CSP needs no inline scripts. -->
+    <script src="/theme.js"></script>
     <title>Collin's Code</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
