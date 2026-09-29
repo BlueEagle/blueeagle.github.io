@@ -48,6 +48,7 @@ a:hover { color: var(--ink); }
 .section.alt { background: var(--surface); }
 .section-title { font-size: 32px; font-weight: 600; letter-spacing: -0.02em; }
 .section-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; }
+.section-link { font-size: 15px; }
 .section-intro { display: flex; flex-direction: column; gap: 12px; }
 .lede { color: var(--muted); font-size: 16px; line-height: 1.6; max-width: 560px; }
 .meta { display: flex; flex-wrap: wrap; gap: 10px; font-size: 13px; color: var(--muted); font-family: var(--mono); }

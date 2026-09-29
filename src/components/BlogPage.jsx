@@ -18,7 +18,7 @@ const BlogPage = ({ query, onQuery, tag, onTag }) => {
       <div className="container narrow">
         <div className="section-head">
           <h2 className="section-title">Writing</h2>
-          <a href={`${process.env.PUBLIC_URL}/rss.xml`} className="rss-pill">RSS</a>
+          <a href="/rss.xml" className="rss-pill">RSS</a>
         </div>
         <div className="blog-filters">
           <input type="search" className="search" placeholder="Search posts" aria-label="Search posts"
