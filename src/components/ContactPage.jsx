@@ -1,62 +1,25 @@
 import React from 'react'
 
-import GithubCard from './GithubCard'
+const CONTACTS = [
+  { label: 'Email', value: 'me@balloucollin.dev', href: 'mailto:me@balloucollin.dev' },
+  { label: 'GitHub', value: '@BlueEagle', href: 'https://github.com/BlueEagle' },
+  { label: 'LinkedIn', value: 'Collin Ballou', href: 'https://www.linkedin.com/in/collin-ballou-67749539/' }
+]
 
-import styled from 'styled-components'
-import EmailIcon from '@material-ui/icons/Email';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import Box from '@material-ui/core/Box';
-
-
-const ContactPage = (props) => {
-    return (
-        <ContactPageDiv>
-            <Styledheader>Contact:</Styledheader>
-            <ContactContainer>
-                <StyledText><a href="mailto:me@balloucollin.dev"><Box><p>Email</p><EmailIcon style={{ fontSize: 80 }} /></Box></a></StyledText>
-                <StyledText><a href="https://github.com/BlueEagle"><Box><p>Github</p><GitHubIcon style={{ fontSize: 80 }} /></Box></a></StyledText>
-                <StyledText><a href="https://www.linkedin.com/in/collin-ballou-67749539/"><Box><p>LinkedIn</p><LinkedInIcon style={{ fontSize: 80 }} /></Box></a></StyledText>
-                <StyledText><a href="https://www.facebook.com/ballou.collin"><Box><p>Facebook</p><FacebookIcon style={{ fontSize: 80 }} /></Box></a></StyledText>
-            </ContactContainer>
-            <GithubCard />
-        </ContactPageDiv>
-    )
-}
+const ContactPage = () => (
+  <section id="contact" className="section alt">
+    <div className="container contact">
+      <h2 className="section-title">Contact</h2>
+      <div className="contact-grid">
+        {CONTACTS.map(c => (
+          <a key={c.label} href={c.href} className="contact-card">
+            <span className="contact-label">{c.label}</span>
+            <span className="contact-value">{c.value}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)
 
 export default ContactPage
-
-const ContactPageDiv = styled.div`
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 70%;
-
-    @media (max-width: 500px) {
-        box-sizing: border-box;
-        width: 100%;
-        /* padding: 1rem; */
-    }
-`
-
-const ContactContainer = styled.section`
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-`
-const Styledheader = styled.h2`
-    /* text-decoration: underline; */
-`
-const StyledText = styled.h3`
-    padding: 2rem;
-
-
-    @media (max-width: 824px) {
-        flex-basis: 30%;
-    }
-    @media (max-width: 500px) {
-        font-size: 1.2rem;
-    }
-`
