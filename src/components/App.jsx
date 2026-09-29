@@ -1,72 +1,91 @@
-import React from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import styled from 'styled-components'
+import React, { useState, useEffect, useRef } from 'react'
 import NavBar from './NavBar'
 import Bio from './Bio'
-import BlogPage from './BlogPage';
-import ContactPage from './ContactPage';
-import ServicesPage from './ServicesPage';
+import Projects, { useRecentRepos } from './Projects'
+import ServicesPage from './ServicesPage'
+import BlogPage from './BlogPage'
+import BlogPost from './BlogPost'
+import ContactPage from './ContactPage'
+import Footer from './Footer'
+import { SORTED } from '../resources/blog'
 
-const globalStyleValues = {
-  fontColor: '#1F2041',
-  lightBlue: '#62A8AC',
-  superLightBlue: '#E0FFFF'
+const THEME_COLORS = { light: '#F5EFE6', dark: '#1A1714' }
+
+// Articles live at #/blog/<slug>; every other hash is a section anchor.
+const articleSlug = () => {
+  const m = (window.location.hash || '').match(/^#\/blog\/(.+)$/)
+  return m && SORTED.some(p => p.slug === m[1]) ? m[1] : null
 }
-const { fontColor, superLightBlue } = globalStyleValues
+
+const scrollToSection = (id, behavior) => {
+  const el = id && document.getElementById(id)
+  if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 72, behavior })
+}
 
 function App() {
-  
+  const [theme, setTheme] = useState(() => document.documentElement.getAttribute('data-theme') || 'light')
+  const [route, setRoute] = useState(articleSlug)
+  const [query, setQuery] = useState('')
+  const [tag, setTag] = useState(null)
+  const pendingScroll = useRef(null)
+  const { repos, error: reposError } = useRecentRepos()
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    const meta = document.querySelector('meta[name="theme-color"]')
+    if (meta) meta.setAttribute('content', THEME_COLORS[theme])
+  }, [theme])
+
+  const toggleTheme = () => {
+    const t = theme === 'dark' ? 'light' : 'dark'
+    try { localStorage.setItem('cc-theme', t) } catch (e) {}
+    setTheme(t)
+  }
+
+  useEffect(() => {
+    // Content renders after load, so the browser can't jump to a deep-linked section itself.
+    if (!articleSlug()) scrollToSection(window.location.hash.slice(1), 'auto')
+
+    let current = articleSlug()
+    const onHash = () => {
+      const slug = articleSlug()
+      if (slug) {
+        window.scrollTo({ top: 0, behavior: 'instant' })
+      } else if (current) {
+        // Leaving an article: scroll to the section once the home page has rendered.
+        pendingScroll.current = window.location.hash.slice(1)
+      }
+      current = slug
+      setRoute(slug)
+    }
+    window.addEventListener('hashchange', onHash)
+    return () => window.removeEventListener('hashchange', onHash)
+  }, [])
+
+  useEffect(() => {
+    if (route || pendingScroll.current === null) return
+    const id = pendingScroll.current
+    pendingScroll.current = null
+    requestAnimationFrame(() => scrollToSection(id, 'smooth'))
+  }, [route])
 
   return (
-    <GloballyStyledDiv className="App">
-      <Router>
-        <NavBar style={globalStyleValues} />
-
-        <CenteredContainerDiv>
-          <Switch>
-            <Route path="/contact">
-              <ContactPage />
-            </Route>
-
-            <Route path="/services">
-              <ServicesPage />
-            </Route>
-
-            <Route path="/blog">
-              <BlogPage />
-            </Route>
-
-            <Route path="/">
-              <Bio />
-            </Route>
-          </Switch>
-        </CenteredContainerDiv>
-      </Router>
-    </GloballyStyledDiv>
-  );
+    <>
+      <NavBar theme={theme} onToggleTheme={toggleTheme} />
+      {route ? (
+        <BlogPost slug={route} />
+      ) : (
+        <main>
+          <Bio />
+          <Projects repos={repos} error={reposError} />
+          <ServicesPage />
+          <BlogPage query={query} onQuery={setQuery} tag={tag} onTag={setTag} />
+          <ContactPage />
+        </main>
+      )}
+      <Footer />
+    </>
+  )
 }
 
-export default App;
-
-const GloballyStyledDiv = styled.div`
-  font-family: 'Arvo', serif;
-  color: ${fontColor};
-
-  a {
-    color: ${fontColor};
-    text-decoration: none;
-  }
-`
-const CenteredContainerDiv = styled.div`
-  overflow-x: hidden;
-  padding: 5% 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: ${superLightBlue};
-  
-  @media (max-width: 700px) {
-    padding: 0;
-  }
-`
+export default App
