@@ -12,7 +12,7 @@ const NavBar = ({ theme, onToggleTheme }) => (
   <header className="site-header">
     <nav className="site-nav">
       <a href="#about" className="brand">
-        <span className="brand-mark">Cc</span>
+        <img src="/icon.svg" alt="" className="brand-mark" width="28" height="28" />
         <span>Collin's Code</span>
       </a>
       <div className="nav-links">

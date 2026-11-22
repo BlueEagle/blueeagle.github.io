@@ -59,7 +59,7 @@ a:hover { color: var(--ink); }
 .site-header { position: sticky; top: 0; z-index: 10; background: var(--bg); border-bottom: 1px solid var(--line); transition: background .3s; }
 .site-nav { max-width: 1120px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; }
 .brand { color: var(--ink); font-weight: 600; font-size: 17px; letter-spacing: -0.01em; display: flex; align-items: center; gap: 10px; }
-.brand-mark { width: 28px; height: 28px; border-radius: 8px; background: var(--accent); color: var(--bg); display: grid; place-items: center; font-size: 13px; font-weight: 700; }
+.brand-mark { width: 28px; height: 28px; display: block; }
 .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
 .nav-link { color: var(--muted); font-size: 15px; padding: 8px 12px; border-radius: 999px; }
 .nav-link:hover { color: var(--ink); background: var(--soft); }
