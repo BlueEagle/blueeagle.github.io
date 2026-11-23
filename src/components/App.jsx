@@ -6,15 +6,19 @@ import ServicesPage from './ServicesPage'
 import BlogPage from './BlogPage'
 import BlogPost from './BlogPost'
 import ContactPage from './ContactPage'
+import ResourcesPage from './ResourcesPage'
 import Footer from './Footer'
 import { SORTED } from '../resources/blog'
 
 const THEME_COLORS = { light: '#F5EFE6', dark: '#1A1714' }
 
-// Articles live at #/blog/<slug>; every other hash is a section anchor.
-const articleSlug = () => {
-  const m = (window.location.hash || '').match(/^#\/blog\/(.+)$/)
-  return m && SORTED.some(p => p.slug === m[1]) ? m[1] : null
+// Pages live at #/resources and #/blog/<slug>; every other hash is a section anchor.
+// Returns 'resources', 'blog:<slug>', or null for the home page.
+const pageRoute = () => {
+  const hash = window.location.hash || ''
+  if (hash === '#/resources') return 'resources'
+  const m = hash.match(/^#\/blog\/(.+)$/)
+  return m && SORTED.some(p => p.slug === m[1]) ? `blog:${m[1]}` : null
 }
 
 const scrollToSection = (id, behavior) => {
@@ -24,7 +28,7 @@ const scrollToSection = (id, behavior) => {
 
 function App() {
   const [theme, setTheme] = useState(() => document.documentElement.getAttribute('data-theme') || 'light')
-  const [route, setRoute] = useState(articleSlug)
+  const [route, setRoute] = useState(pageRoute)
   const [query, setQuery] = useState('')
   const [tag, setTag] = useState(null)
   const pendingScroll = useRef(null)
@@ -44,15 +48,15 @@ function App() {
 
   useEffect(() => {
     // Content renders after load, so the browser can't jump to a deep-linked section itself.
-    if (!articleSlug()) scrollToSection(window.location.hash.slice(1), 'auto')
+    if (!pageRoute()) scrollToSection(window.location.hash.slice(1), 'auto')
 
-    let current = articleSlug()
+    let current = pageRoute()
     const onHash = () => {
-      const slug = articleSlug()
+      const slug = pageRoute()
       if (slug) {
         window.scrollTo({ top: 0, behavior: 'instant' })
       } else if (current) {
-        // Leaving an article: scroll to the section once the home page has rendered.
+        // Leaving a page: scroll to the section once the home page has rendered.
         pendingScroll.current = window.location.hash.slice(1)
       }
       current = slug
@@ -72,8 +76,10 @@ function App() {
   return (
     <>
       <NavBar theme={theme} onToggleTheme={toggleTheme} />
-      {route ? (
-        <BlogPost slug={route} />
+      {route === 'resources' ? (
+        <ResourcesPage />
+      ) : route ? (
+        <BlogPost slug={route.slice('blog:'.length)} />
       ) : (
         <main>
           <Bio />

@@ -140,6 +140,10 @@ a:hover { color: var(--ink); }
 .post-nav-label { font-size: 13px; color: var(--muted); font-family: var(--mono); }
 .post-nav-title { font-size: 16px; font-weight: 500; }
 
+/* Resources */
+.resources .container { gap: 28px; }
+.resource-open { margin-left: auto; color: var(--accent); }
+
 /* Contact */
 .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px; }
 .contact-card { color: var(--ink); border: 1px solid var(--line); background: var(--bg); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 6px; }
