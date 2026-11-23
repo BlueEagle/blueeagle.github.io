@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="description" content="Draw, subdivide, and share ward, area, and group boundaries. Runs in your browser; nothing is stored or uploaded." />
+    <title>Ward Mapper</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M4 6l8-3 8 3 8-3v23l-8 3-8-3-8 3z' fill='%231f77b4'/%3E%3C/svg%3E" />
+    <script type="module" crossorigin src="./assets/index-C0jJbVPZ.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-3-_6f7L8.css">
+  </head>
+  <body>
+    <div id="app">
+      <aside id="panel">
+        <header class="bar">
+          <h1>Ward Mapper <span id="dirty" hidden title="You have changes that are not saved to a file">• unsaved</span></h1>
+          <div class="row">
+            <button id="btn-open" title="Open a .geojson or .kml file">Open…</button>
+            <button id="btn-save-geojson" class="primary" title="Save everything as GeoJSON">Save</button>
+            <button id="btn-save-kml" title="Save as KML for Google Earth / My Maps">KML</button>
+            <button id="btn-undo" title="Undo (Ctrl+Z)">Undo</button>
+            <button id="btn-redo" title="Redo (Ctrl+Shift+Z)">Redo</button>
+            <button id="btn-new" title="Start a blank map">New</button>
+          </div>
+          <input id="file-input" type="file" accept=".geojson,.json,.kml,application/geo+json,application/json,application/vnd.google-earth.kml+xml" hidden />
+        </header>
+
+        <form id="search" class="row">
+          <input id="search-q" type="search" placeholder="Find an address or city" autocomplete="off" />
+          <button type="submit">Go</button>
+          <button type="button" id="btn-locate" title="Zoom to my location">◎</button>
+        </form>
+
+        <section id="details"></section>
+
+        <section>
+          <h2>Map contents</h2>
+          <div class="row toggles">
+            <label><input type="checkbox" data-level="ward" checked /> Wards</label>
+            <label><input type="checkbox" data-level="area" checked /> Areas</label>
+            <label><input type="checkbox" data-level="group" checked /> <span id="lbl-group-toggle">Groups</span></label>
+            <label><input type="checkbox" id="chk-labels" checked /> Labels</label>
+          </div>
+          <ul id="tree"></ul>
+        </section>
+
+        <details id="history">
+          <summary>History <span id="history-count"></span></summary>
+          <p class="hint">Tap any step to go back (or forward) to it.</p>
+          <ol id="history-list"></ol>
+        </details>
+
+        <details id="settings">
+          <summary>Settings</summary>
+          <label class="check">
+            <input type="checkbox" id="chk-remember" />
+            <span><b>Remember my map in this browser</b><br /><small>Off by default. When on, your map and settings are saved on this device as you work and reopen next time. Anyone using this browser could see them. Turning it off erases the saved copy.</small></span>
+          </label>
+          <label class="check">
+            <input type="checkbox" id="chk-pencil" />
+            <span><b>Apple Pencil mode</b><br /><small>Draw with the Pencil in one stroke. Move and zoom the map with your finger. The Pencil never moves the map.</small></span>
+          </label>
+          <label class="field">The smallest division is called
+            <select id="sel-group-word"><option value="Group">Groups</option><option value="Block">Blocks</option></select>
+          </label>
+        </details>
+
+        <footer class="privacy" id="privacy"></footer>
+      </aside>
+
+      <main id="map-wrap">
+        <div id="map"></div>
+        <div id="mode-bar" hidden></div>
+        <div id="toast" hidden role="status"></div>
+      </main>
+    </div>
+    <div id="modal" hidden></div>
+  </body>
+</html>
